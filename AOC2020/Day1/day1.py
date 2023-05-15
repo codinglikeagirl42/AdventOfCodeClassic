@@ -1,6 +1,6 @@
 #Get data from text file
 data = open("AOC2020/Day1/day1.txt", "r").read().split("\n")
-#Code does not account for multiplies
+
 part1 = 0
 part2 = 0
 for line in data:
