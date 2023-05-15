@@ -1,13 +1,7 @@
 #Get data from text file
-data = open("AOC2020/Day1/test.txt", "r").read().split("\n")
+data = open("AOC2020/Day1/day1.txt", "r").read().split("\n")
 
-from itertools import combinations
-
-
-print(type(data))
-
-#all_pairs = combinations(data, 2)
-
-    
-  
-#print(all_pairs)
+for line in data:
+    for lines in data:
+        if int(line) + int(lines) == 2020:
+            print((int(line)) * (int(lines)))
