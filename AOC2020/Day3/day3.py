@@ -6,11 +6,11 @@ data = open("AOC2020/Day3/day3.txt", "r").read().split("\n")
 
 # Number of Columns (x)
 columns = len(data)
-print(columns)
+print(columns - 1)
 
 # Number of Rows (y)
 rows = (len(data[0]))
-#print(rows)
+print(rows)
 
 #x_move = 3
 #y_move = 1
@@ -31,17 +31,17 @@ def total_trees(x_move, y_move):
         #print(x)
         #print(y)
         #print(data[y][x])
-        
-
         if data[y][x] == tree:
             trees += 1
+        if (columns -1) <= y:
+            return trees
     return trees
 
     
 trees_part1 = total_trees(3,1)  
 print("Part 1: " + str(trees_part1))
 
-trees_part2 = total_trees(3,1) * total_trees(1,1) * total_trees(5,1) * total_trees(7,1) 
-#trees_more = total_trees(1,2) 
+trees_part2 = total_trees(3,1) * total_trees(1,1) * total_trees(5,1) * total_trees(7,1) * total_trees(1,2) 
+#trees_more = 
 print("Part 2: " + str(trees_part2))
 #print(trees_more)
