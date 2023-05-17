@@ -10,13 +10,13 @@ for item in data:
     for items in new_items:
         pieces.append(items[:3])
     
-    print(pieces)   
+    #print(pieces)   
     count = 0
     for piece in pieces:
         #print(piece)
         if piece in documentation:
             count += 1
-            print(count)
+            #print(count)
     if count == 7:
         passport_valid += 1
 print("Part 1: " + str(passport_valid))
