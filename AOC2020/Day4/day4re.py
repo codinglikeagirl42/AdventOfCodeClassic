@@ -38,7 +38,7 @@ for passport in passports_valid:
                             if 2010 <= int(pieces[5]) <= 2020:
                                 if re.match("^[0-9${9}]", pieces[6]) and len(pieces[6]) == 9:
                                     new_passport_valid.append(passport)
-
+    
      
 print("Part 1: " + str(len(passports_valid)))
 print("Part 2: " + str(len(new_passport_valid)))
