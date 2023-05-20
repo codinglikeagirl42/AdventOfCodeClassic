@@ -7,7 +7,6 @@ from math import floor
 fuel_need = 0
 for number in data:
     
-    fuel_need += (floor((int(number))/3))
-    #print(type(floor(int(number/3)) - 2))
-
+    fuel_need += ((floor((int(number))/3)) - 2)
+    
 print("Part1: " + str(fuel_need))
