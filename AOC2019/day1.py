@@ -11,7 +11,16 @@ for number in data:
     fuel_need += ((floor((int(number))/3)) - 2)
     fuel_per_module.append((floor((int(number))/3)) - 2)
 
-
-    
+all_fuel_need = []
+for module in fuel_per_module:
+    extra_fuel = 0
+    current_fuel = module
+    need_more = True
+    while need_more == True:
+        extra_fuel += ((floor((int(current_fuel))/3)) - 2)
+        current_fuel = ((floor((int(current_fuel))/3)) - 2)
+        if current_fuel < 9:
+            need_more = False
+    all_fuel_need.append(extra_fuel)
 print("Part1: " + str(fuel_need))
-print("Part2: " + str(fuel_need))
+print("Part2: " + str(sum(all_fuel_need)))
