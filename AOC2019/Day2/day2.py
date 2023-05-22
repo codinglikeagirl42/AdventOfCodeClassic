@@ -20,5 +20,5 @@ def intcode(data):
             return(data)
 
 answer = intcode(data)
-print(answer)
+print("Part 1: " + str(answer[0]))
 
