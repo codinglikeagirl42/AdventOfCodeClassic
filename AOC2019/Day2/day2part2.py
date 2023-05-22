@@ -2,7 +2,7 @@
 data = open("AOC2019/Day2/day2.txt", "r").read().split(",")
 
 def intcode(data):
-    for opcode in range(0, len(data), 4):
+    for opcode in range(0, (len(data)-4), 4):
         opcode = int(opcode)
         what_to_do = int(data[opcode])
         input_1 = int(data[opcode + 1])
@@ -16,16 +16,20 @@ def intcode(data):
         else:
             return data[0]
         
-
+#Part 1
+data[1] = 12
+data[2] = 2
+answer = intcode(data)
+print("Part 1: " + str(answer))
+"""
 for noun in range(100):
     for verb in range(100):
-
         data[1] = noun
         data[2] = verb
-    
-        answer = intcode(data)
-            
-    if answer == 19690720:
-        print("Part 2: " + str(100 * noun + verb))
-        break
-           
+
+        check = intcode(data)
+        print(check)
+        if check == 19690720:
+            print("Part 2: " + str(100 * noun + verb))
+            break
+"""
