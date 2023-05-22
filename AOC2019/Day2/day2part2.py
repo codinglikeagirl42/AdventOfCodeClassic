@@ -1,21 +1,6 @@
 #Get data from text file
 data = open("AOC2019/Day2/day2.txt", "r").read().split(",")
 
-def pairs_needed(data):
-
-    for noun in range(100):
-        for verb in range(100):
-
-            data[1] = noun
-            data[2] = verb
-    
-            answer = intcode(data)
-            
-    if answer == 19690720:
-        return(100 * noun + verb)
-           
-
-
 def intcode(data):
     for opcode in range(0, len(data), 4):
         opcode = int(opcode)
@@ -31,5 +16,16 @@ def intcode(data):
         else:
             return data[0]
         
-answer_2 = pairs_needed(data)
-print("Part 2: " + str(answer_2))
+
+for noun in range(100):
+    for verb in range(100):
+
+        data[1] = noun
+        data[2] = verb
+    
+        answer = intcode(data)
+            
+    if answer == 19690720:
+        print("Part 2: " + str(100 * noun + verb))
+        break
+           
