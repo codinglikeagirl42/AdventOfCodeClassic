@@ -1,35 +1,40 @@
 #Get data from text file
 data = open("AOC2019/Day2/day2.txt", "r").read().split(",")
 
-def intcode(data):
+def intcode(data, noun, verb):
     for opcode in range(0, (len(data)-4), 4):
+        test_data = data
+        test_data[1] = noun
+        test_data[2] = verb
+        print(test_data[1])
+        print(test_data[2])
         opcode = int(opcode)
-        what_to_do = int(data[opcode])
-        input_1 = int(data[opcode + 1])
-        input_2 = int(data[opcode + 2])
-        where_to_put = int(data[opcode + 3])
+        what_to_do = int(test_data[opcode])
+        input_1 = int(test_data[opcode + 1])
+        input_2 = int(test_data[opcode + 2])
+        
+        if what_to_do == 99:
+            return test_data[0]
+        
+        #where_to_put = int(test_data[opcode + 3])
 
         if what_to_do == 1:
-            data[where_to_put] = int(data[input_1]) + int(data[input_2])
-        elif what_to_do == 2:
-            data[where_to_put] = int(data[input_1]) * int(data[input_2])
-        else:
-            return data[0]
-        
+            test_data[int(test_data[opcode + 3])] = int(test_data[input_1]) + int(test_data[input_2])
+        if what_to_do == 2:
+            test_data[int(test_data[opcode + 3])] = int(test_data[input_1]) * int(test_data[input_2])
+        #else:
+            #return test_data[0]
+"""    
 #Part 1
-data[1] = 12
-data[2] = 2
-answer = intcode(data)
+
+answer = intcode(data, 12, 2)
 print("Part 1: " + str(answer))
 """
 for noun in range(100):
     for verb in range(100):
-        data[1] = noun
-        data[2] = verb
-
-        check = intcode(data)
+        check = intcode(data, noun, verb)
         print(check)
         if check == 19690720:
             print("Part 2: " + str(100 * noun + verb))
-            break
-"""
+            
+ 
