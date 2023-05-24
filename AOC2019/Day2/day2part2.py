@@ -2,6 +2,7 @@
 data = open("AOC2019/Day2/day2.txt", "r").read().split(",")
 
 # https://www.educative.io/answers/how-to-copy-a-list-in-python
+# another way to explore -> https://www.geeksforgeeks.org/rearrange-given-array-place/
 
 def intcode(test_data):
     for opcode in range(0, (len(test_data)-4), 4):
