@@ -10,6 +10,7 @@ for line in data:
     frequency += int(line)
 print("Part 1: " + str(frequency))
 
+# This part 2 solution takes a few minutes to compute, must have patience 
 frequency = 0
 double = [0]
 is_double = False
