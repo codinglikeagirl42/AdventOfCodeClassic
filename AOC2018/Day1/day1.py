@@ -10,3 +10,17 @@ for line in data:
     frequency += int(line)
 print("Part 1: " + str(frequency))
 
+frequency = 0
+double = [0]
+is_double = False
+
+while is_double == False:
+    for item in data:
+        frequency += int(item)
+        if frequency in double:
+            print("Part 2: " + str(frequency))
+            is_double = True
+            break
+        else:
+            double.append(frequency)
+        
